@@ -2,10 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Included
--CRA
--Tailwind CSS
--React Router
+## Included
+
+* CRA
+* Tailwind Css
+* React Router
 
 ## Available Scripts
 
