@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomButton from '../Component/CustomButton'
+import CustomButton from '../Components/CustomButton'
 
 class Home extends React.Component {  
   constructor(props) {

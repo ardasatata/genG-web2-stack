@@ -1,5 +1,6 @@
 import React from 'react';
-import CustomButton from '../Component/CustomButton'
+import CustomButton from '../Components/CustomButton'
+import Welcome from '../Components/Welcome'
 
 const array = [
   {
@@ -37,7 +38,7 @@ class Home extends React.Component {
   render() {
     return (
         <div className="flex flex-col h-full justify-center items-center bg-teal-100">
-          <p class="font-bold text-3xl text-teal-700 mb-12">Welcome to our web!</p>
+          <Welcome></Welcome>
           <p class="font-bold text-3xl text-teal-700 mb-12">Count = {this.state.count}</p>
           <CustomButton onClick={()=>this.pressButton()} label="Welcome Aboard!"></CustomButton>
           {
