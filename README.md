@@ -10,6 +10,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-Langsung Gas
+Setelah Clone Jangan Lupa
 
-### `npm start`
+## `npm install`
+
+Run Project
+
+## `npm start`
+
+Custom Component Example
+
+* url/personal > using no component
+* url/personal2 > using component
+* url/personal3 > using component + array map

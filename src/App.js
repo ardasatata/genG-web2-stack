@@ -12,6 +12,7 @@ import Home from './Screens/Home'
 import About from './Screens/About'
 import Normal from './Screens/Personal/Normal'
 import Component from './Screens/Personal/Component'
+import ArrayMap from './Screens/Personal/ArrayMap'
 
 class App extends React.Component {  
   constructor(props) {
@@ -31,6 +32,9 @@ class App extends React.Component {
               </Route>
               <Route path="/personal2">
                 <Component />
+              </Route>
+              <Route path="/personal3">
+                <ArrayMap />
               </Route>
               <Route path="/about">
                 <About />
