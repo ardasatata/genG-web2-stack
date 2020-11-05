@@ -4,7 +4,6 @@ import lauren1 from '../../Assets/1.jpg'
 import lauren2 from '../../Assets/2.gif'
 import lauren3 from '../../Assets/3.jpg'
 
-import PropTypes from 'prop-types';
 import Section from './Component/Section'
 
 const sectionList = [

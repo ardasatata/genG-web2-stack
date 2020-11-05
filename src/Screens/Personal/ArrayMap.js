@@ -1,8 +1,6 @@
 import React from 'react';
 
-import PropTypes from 'prop-types';
 import Section from './Component/Section'
-
 import sectionList from './sectionList'
 
 class ArrayMap extends React.Component {  

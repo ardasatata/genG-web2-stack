@@ -55,7 +55,7 @@ class CustomButton extends React.Component {
   
   render() {
     return (
-        <div className="text-teal-700 font-sans text-3xl font-bold">
+        <div className="text-blue-300 font-sans text-3xl font-bold">
           {WELCOME_TEXT[this.state.index].word}
         </div>
     )

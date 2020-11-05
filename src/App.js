@@ -1,10 +1,8 @@
 import React from 'react';
-import CustomButton from './Components/CustomButton'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import './App.css';
 
@@ -24,7 +22,7 @@ const personalExample = [
     component: Component
   },
   {
-    id: "arrayMap",
+    id: "array-map",
     component: ArrayMap
   }
 ]
@@ -39,12 +37,13 @@ class App extends React.Component {
 
   render() {
     return (
+      // ToDo : convert it to Router Component
       <div className="flex flex-col h-screen">
         <Router>
             <Switch>
               {/* This is the example to iterate the route component instead of write it one by one */}
               {personalExample.map(({id, component})=>(
-                <Route path={`/personal/${id}`} component={component}/>
+                <Route path={`/component/${id}`} component={component}/>
               ))}
               <Route path="/">
                 <Home />

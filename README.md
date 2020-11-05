@@ -20,6 +20,6 @@ Run Project
 
 Custom Component Example
 
-* url/personal > using no component
-* url/personal2 > using component
-* url/personal3 > using component + array map
+* localhost:3000/component/normal > using no component
+* localhost:3000/component/component > using component
+* localhost:3000/component/array-map > using component + array map
