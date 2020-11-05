@@ -14,6 +14,21 @@ import Normal from './Screens/Personal/Normal'
 import Component from './Screens/Personal/Component'
 import ArrayMap from './Screens/Personal/ArrayMap'
 
+const personalExample = [
+  {
+    id: "normal",
+    component: Normal
+  },
+  {
+    id: "component",
+    component: Component
+  },
+  {
+    id: "arrayMap",
+    component: ArrayMap
+  }
+]
+
 class App extends React.Component {  
   constructor(props) {
     super(props);
@@ -27,18 +42,10 @@ class App extends React.Component {
       <div className="flex flex-col h-screen">
         <Router>
             <Switch>
-              <Route path="/personal">
-                <Normal />
-              </Route>
-              <Route path="/personal2">
-                <Component />
-              </Route>
-              <Route path="/personal3">
-                <ArrayMap />
-              </Route>
-              <Route path="/about">
-                <About />
-              </Route>
+              {/* This is the example to iterate the route component instead of write it one by one */}
+              {personalExample.map(({id, component})=>(
+                <Route path={`/personal/${id}`} component={component}/>
+              ))}
               <Route path="/">
                 <Home />
               </Route>

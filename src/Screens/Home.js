@@ -2,13 +2,23 @@ import React from 'react';
 import CustomButton from '../Components/CustomButton'
 import Welcome from '../Components/Welcome'
 
-const array = [
+import { useHistory } from "react-router-dom";
+
+import {withRouter} from 'react-router';
+
+const routeList = [
   {
-    name: 'Jack'
+    name: 'Normal',
+    route: 'personal/normal'
   },
   {
-    name: 'Sparrow'
-  }
+    name: 'Using Component',
+    route: 'personal/component'
+  },  
+  {
+    name: 'Use ArrayMap',
+    route: 'personal/arrayMap'
+  },
 ]
 
 class Home extends React.Component {  
@@ -19,12 +29,12 @@ class Home extends React.Component {
     };
   }
 
+
   // es 2020 notation
   showAlert = () => {
     alert('halo')
   }
 
-  // 
   showAlert2() {
     alert('halo 2')
   }
@@ -33,16 +43,28 @@ class Home extends React.Component {
     this.setState((state, props) => ({
       count: state.count +1
     }));
+    this.showAlert()
+  }
+
+  navigateTo(route) {
+    this.props.history.push(route);
   }
 
   render() {
     return (
         <div className="flex flex-col h-full justify-center items-center bg-teal-100">
-          <Welcome></Welcome>
+          {/* Component that doesn't have children can be written like this */}
+          <Welcome/> 
+
+          {/* State Example */}
           <p class="font-bold text-3xl text-teal-700 mb-12">Count = {this.state.count}</p>
-          <CustomButton onClick={()=>this.pressButton()} label="Welcome Aboard!"></CustomButton>
+
+          {/* Component Example */}
+          <CustomButton containerStyle="mb-8" onClick={()=>this.pressButton()} label="Component Example!"></CustomButton>
+
+          {/* List / Array Map Example*/}
           {
-            array.map((item,index)=>(<CustomButton onClick={()=>this.pressButton()} label={item.name}></CustomButton>))
+            routeList.map((item,index)=>(<CustomButton containerStyle="mb-4" onClick={()=>this.navigateTo(item.route)} label={item.name}></CustomButton>))
           }
         </div>
     );
@@ -50,4 +72,4 @@ class Home extends React.Component {
 }
 
 
-export default Home;
+export default withRouter(Home);
