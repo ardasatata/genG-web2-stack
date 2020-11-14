@@ -8,9 +8,12 @@ import './App.css';
 
 import Home from './Screens/Home'
 import About from './Screens/About'
+
 import Normal from './Screens/Personal/Normal'
 import Component from './Screens/Personal/Component'
 import ArrayMap from './Screens/Personal/ArrayMap'
+
+import Profile from './Screens/GithubProfile/Profile'
 
 const personalExample = [
   {
@@ -27,7 +30,7 @@ const personalExample = [
   }
 ]
 
-class App extends React.Component {  
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -45,10 +48,13 @@ class App extends React.Component {
               {personalExample.map(({id, component})=>(
                 <Route path={`/component/${id}`} component={component}/>
               ))}
+              <Route path="/github/profile">
+                <Profile />
+              </Route>
               <Route path="/">
                 <Home />
               </Route>
-            </Switch> 
+            </Switch>
         </Router>
       </div>
     );

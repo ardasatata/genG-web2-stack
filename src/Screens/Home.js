@@ -14,21 +14,25 @@ const routeList = [
   {
     name: 'Using Component',
     route: 'component/component'
-  },  
+  },
   {
     name: 'Use ArrayMap',
     route: 'component/array-map'
   },
+  {
+    name: 'Github Profile',
+    route: 'github/profile'
+  },
 ]
 
 // outside class function example :
-// place it outside when a function doesn't rely on 'this.' 
+// place it outside when a function doesn't rely on 'this.'
 // to makes it easier to define, read, and test.
 function consoleLog() {
   console.log("Hello!")
 }
 
-class Home extends React.Component {  
+class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -63,7 +67,7 @@ class Home extends React.Component {
     return (
         <div class="flex flex-col h-full justify-center items-center bg-teal-100">
           {/* Component that doesn't have children can be written like this */}
-          <Welcome/> 
+          <Welcome/>
 
           {/* State Example */}
           <p class="font-bold text-3xl text-orange-300 mb-12">Count = {this.state.count}</p>

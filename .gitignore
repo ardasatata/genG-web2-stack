@@ -1,1 +1,9 @@
 node_modules/
+.idea/.gitignore
+.idea/genG-web2-stack.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/codeStyles/codeStyleConfig.xml
+.idea/codeStyles/Project.xml
+.idea/inspectionProfiles/Project_Default.xml
