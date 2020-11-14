@@ -48,8 +48,7 @@ class App extends React.Component {
               {personalExample.map(({id, component})=>(
                 <Route path={`/component/${id}`} component={component}/>
               ))}
-              <Route path="/github/profile">
-                <Profile />
+              <Route path="/github/profile/:username" component={Profile}>
               </Route>
               <Route path="/">
                 <Home />

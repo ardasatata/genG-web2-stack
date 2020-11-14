@@ -1,4 +1,11 @@
 import React from 'react';
+import ReactDOM from "react-dom";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    useParams
+} from "react-router-dom";
 
 // import axios library
 import axios from 'axios';
@@ -31,6 +38,7 @@ export const LocationLogo = ({color, size, containerStyle}) => {
 }
 
 class Profile extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -70,7 +78,11 @@ class Profile extends React.Component {
 
     loadDataWithAxios(){
         // Using Axios
-        axios.get(`https://api.github.com/users/ardasatata`)
+
+        // get parameter value 'react-router'
+        const username = this.props.match.params.username
+
+        axios.get(`https://api.github.com/users/${username}`)
             .then(res => {
                 console.log(res)
                 const data = res.data;
@@ -90,7 +102,12 @@ class Profile extends React.Component {
     render() {
         const {error, isLoaded, data} = this.state;
         if (error) {
-            return <div>Error: {error.message}</div>;
+            return (
+                <div className="flex flex-col h-full justify-center items-center">
+                    <img className="h-64 mb-4" src={"https://media1.tenor.com/images/a828888852e708d9afaaad06c7f9513f/tenor.gif"}/>
+                    <div className="text-3xl font-bold">Woops 404!</div>
+                </div>
+            )
         } else if (!isLoaded) {
             return (
                 <div className="flex h-full justify-center items-center">
@@ -115,18 +132,25 @@ class Profile extends React.Component {
                                 </p>
                             </div>
                             <div className="text-CGBlue">
-                                <div className="flex flex-row mb-2">
-                                    <BoxLogo color={'#227c9d'} size={24} containerStyle="mr-2"/>
-                                    <div>
-                                        {data.company}
-                                    </div>
-                                </div>
-                                <div className="flex flex-row">
-                                    <LocationLogo color={'#227c9d'} size={24} containerStyle="mr-2"/>
-                                    <div>
-                                        {data.location}
-                                    </div>
-                                </div>
+                                { data.company !== null ?
+                                    (
+                                        <div className="flex flex-row mb-2">
+                                            <BoxLogo color={'#227c9d'} size={24} containerStyle="mr-2"/>
+                                            <div>
+                                                {data.company}
+                                            </div>
+                                        </div>
+                                    ) : null }
+
+                                {data.location !== null ?
+                                    (
+                                        <div className="flex flex-row">
+                                            <LocationLogo color={'#227c9d'} size={24} containerStyle="mr-2"/>
+                                            <div>
+                                                {data.location}
+                                            </div>
+                                        </div>
+                                    ) : null}
                             </div>
                         </div>
 

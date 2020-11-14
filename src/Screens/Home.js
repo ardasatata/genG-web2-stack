@@ -21,7 +21,7 @@ const routeList = [
   },
   {
     name: 'Github Profile',
-    route: 'github/profile'
+    route: 'github/profile/ardasatata' // example
   },
 ]
 
